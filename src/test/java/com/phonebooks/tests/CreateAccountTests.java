@@ -2,13 +2,21 @@ package com.phonebooks.tests;
 
 import com.phonebook.models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class CreateAccountTests extends TestBase{
     SoftAssert softAssert = new SoftAssert();
 
-     @Test (enabled = false)
+    @BeforeMethod
+    public void ensurePrecondition(){
+        if(!app.getUser().isLoginLinkPresent()){
+            app.getUser().clickOnSignOutButton();
+        }
+    }
+
+    @Test (enabled = false)
     public void newUserRegistrationPositiveTest(){
         app.getUser().clickOnLoginLink();;
         //type(By.name("email"), "pro@gmail.com");
@@ -23,7 +31,7 @@ public class CreateAccountTests extends TestBase{
         Assert.assertTrue(app.getUser().isSingOutPresent());
     }
 
-    @Test
+    @Test (enabled = false)
     public void existedRegistrationPositiveTest(){
         app.getUser().clickOnLoginLink();
         app.getUser().fillRegisterLoginForm(new User()

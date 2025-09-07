@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class UserHelper extends BaseHelper{
 
+    public boolean isLoginLinkPresent(){
+        return isElementPresent(By.cssSelector("[href='/login']"));
+    };
+
     public UserHelper(WebDriver driver) {
         super(driver);
     }
@@ -36,5 +40,8 @@ public class UserHelper extends BaseHelper{
     }
 
     public void clickOnLoginButton() { click(By.name("login"));
+    }
+
+    public void clickOnSignOutButton() {click(By.xpath("//button[.='Sign Out']"));
     }
 }

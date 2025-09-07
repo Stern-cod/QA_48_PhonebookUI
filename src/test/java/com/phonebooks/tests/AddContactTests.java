@@ -10,6 +10,10 @@ import org.testng.annotations.Test;
 public class AddContactTests extends TestBase{
     @BeforeMethod
     public void precondition(){
+        if(!app.getUser().isLoginLinkPresent()){
+            app.getUser().clickOnSignOutButton();
+        }
+
         app.getUser().clickOnLoginLink();
         app.getUser().fillRegisterLoginForm(new User()
                 .setEmail("pro101kod@gmail.com")

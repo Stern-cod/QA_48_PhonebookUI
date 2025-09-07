@@ -13,7 +13,7 @@ public class LoginTests extends TestBase{
         }
     }
 
-    @Test
+    @Test(priority = 1)
     public void loginPositiveTests(){
         app.getUser().clickOnLoginLink();;
         app.getUser().fillRegisterLoginForm(new User()
@@ -23,7 +23,7 @@ public class LoginTests extends TestBase{
         Assert.assertTrue(app.getUser().isSingOutPresent());
     }
 
-    @Test
+    @Test(priority = 2)
     public void loginNegativeWithoutEmailTest(){
         app.getUser().clickOnLoginLink();
         app.getUser().fillRegisterLoginForm( new User()

@@ -6,7 +6,7 @@
             <class name="com.phonebooks.tests.HomePageTests"/>
             <class name="com.phonebooks.tests.LoginTests">
                 <methods>
-                    <exclude name=".*Negative.*"></exclude>
+                    <exclude name=".*Negative.*"> </exclude>
                 </methods>
                     </class>
             <class name="com.phonebooks.tests.AddContactTests"/>

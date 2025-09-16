@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class ApplicationManager{
+public class ApplicationManager {
 
     String browser;
     WebDriver driver;
@@ -24,8 +24,7 @@ public class ApplicationManager{
                 driver = new ChromeDriver();
         }
         else  if(browser.equalsIgnoreCase("firefox")){
-            driver = new FirefoxDriver();
-        }
+            driver = new FirefoxDriver();        }
 
         driver.get("https://telranedu.web.app/home");
         driver.manage().window().maximize();

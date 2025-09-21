@@ -9,7 +9,11 @@
                     <exclude name=".*Negative.*"> </exclude>
                 </methods>
                     </class>
-            <class name="com.phonebooks.tests.AddContactTests"/>
+            <class name="com.phonebooks.tests.AddContactTests">
+                <methods>
+                    <exclude name=".*From.*"> </exclude>
+                </methods>
+                    </class>
             <class name="com.phonebooks.tests.DeleteContactTests"/>
         </classes>
     </test>
